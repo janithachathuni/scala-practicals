@@ -3,7 +3,7 @@ object CaesarCipher{
     text.map { char =>
       if (char.isLetter){
         val base = if (char.isUpper) 'A' else 'a'
-        val newChar = ((char - base + shift) % 26 + 26) % 26 + base
+        val newChar = (char - base + shift + 26) % 26 + base  
         newChar.toChar
       }else{
         char
@@ -15,7 +15,7 @@ object CaesarCipher{
     text.map{ char =>
       if (char.isLetter){
         val base = if (char.isUpper) 'A' else 'a'
-        val newChar = ((char - base - shift) % 26 + 26) % 26 + base
+        val newChar = (char - base - shift + 26) % 26 + base
         newChar.toChar
       }else {
         char
